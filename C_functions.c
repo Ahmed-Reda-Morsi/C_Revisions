@@ -73,32 +73,3 @@ void bubble_sort(int arr[], int size)
         }
     }
 };
-
-// =============== binary search algorithm  ===============
-    // !the array must be sorted before use this algorithm.
-    // return the index of this value if existed or (-1) if not existed.
-int binary_search(const int arr[],int size,int value){
-    //int size=sizeof(arr)/sizeof(arr[0]);
-    int index=-1;
-    int win_end=size-1,win_start=0;
-    while (win_end>=win_start)
-    {
-        int win_median=(win_end+win_start)/2;
-        if (value==arr[win_median])
-        {
-            index= win_median; 
-            break;
-            
-        }else if (value>arr[win_median])
-        {
-            win_start=win_median+1;
-            
-        }else
-        {
-            win_end=win_median-1;
-        }
-        
-    }
-    
-    return index;
-};
